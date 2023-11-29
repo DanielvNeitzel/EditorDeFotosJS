@@ -6,12 +6,13 @@ const range = document.querySelector("input[type=range]");
 const spnRangeValue = document.getElementById("spnRangeValue");
 const btnResetFilters = document.getElementById("btnResetFilters");
 const btnSalvar = document.getElementById("btnSalvar");
-
 const emptyImg = document.querySelector(".emptyImg");
 const currentImg = document.querySelector(".currentImg");
-
 const rotateContent = document.querySelector(".rotate-content");
 const filtersContent = document.querySelector(".filters-content");
+const rangeLine = document.querySelector(".range-line");
+const removeRangeVal = document.querySelector("#removeRangeVal");
+const addRangeVal = document.querySelector("#addRangeVal");
 
 let rotate;
 let flipY;
@@ -21,14 +22,14 @@ let filterActive;
 
 let filters;
 
-btnResetFilters.onclick = () => resetImg();init();
+btnResetFilters.onclick = () => resetImg(); init();
 
 resetImg();
 
 init();
 
 function resetImg() {
-    range.classList.add("hide");
+    rangeLine.classList.add("hide");
     spnRangeValue.classList.add("hide");
     btnSalvar.classList.add("hide");
     btnResetFilters.classList.add("hide");
@@ -91,7 +92,7 @@ function loadNewImage() {
     if (file) {
         emptyImg.classList.add("hide");
         currentImg.classList.remove("hide");
-        range.classList.remove("hide");
+        rangeLine.classList.remove("hide");
         spnRangeValue.classList.remove("hide");
         btnSalvar.classList.remove("hide");
         btnResetFilters.classList.remove("hide");
@@ -161,11 +162,24 @@ function download() {
         canvas.width,
         canvas.height
     );
-    
+
     let data = new Date();
     const dataFormatada = ((data.getHours())) + "_" + ((data.getMinutes())) + "_" + ((data.getDate())) + "/" + ((data.getMonth() + 1)) + "/" + data.getFullYear();
     const link = document.createElement("a");
     link.download = "Foto_Editada_" + dataFormatada + ".png";
     link.href = canvas.toDataURL();
     link.click();
+}
+
+removeRangeVal.onclick = () => ValRange('-');
+addRangeVal.onclick = () => ValRange('+');
+
+function ValRange(val) {
+    if (val === '-') {
+        range.value =- 1;
+    }
+    if (val === '+') {
+        range.value =+ 1;
+    }
+    range.oninput();
 }
