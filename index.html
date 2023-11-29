@@ -38,7 +38,11 @@
         <button onclick="handleDirection('reflectX')"><span class="material-symbols-outlined">swap_vert</span></button>
       </div>
       <span id="spnRangeValue"></span>
-      <input type="range" style="width: 80%;" />
+      <div class="range-line">
+        <span id="removeRangeVal" class="material-symbols-outlined">remove</span>
+        <input type="range" style="width: 80%;" />
+        <span id="addRangeVal" class="material-symbols-outlined">add</span>
+      </div>
       <div class="filters-content">
         <button id="light-ctrl" class="active"><span class="material-symbols-outlined">wb_sunny</span><p>Brilho</p></button>
         <button id="contrast-ctrl"><span class="material-symbols-outlined">contrast</span><p>Contraste</p></button>
