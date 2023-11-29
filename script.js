@@ -176,10 +176,10 @@ addRangeVal.onclick = () => ValRange('+');
 
 function ValRange(val) {
     if (val === '-') {
-        range.value =- 1;
+        range.value = range.value - 1;
     }
     if (val === '+') {
-        range.value =+ 1;
+        range.value = range.value + 1;
     }
     range.oninput();
 }
