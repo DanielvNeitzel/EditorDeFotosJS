@@ -162,7 +162,7 @@ function download() {
         canvas.height
     );
     
-    const dataFormatada = ((data.getHours())) + "_" +((data.getMinutes())) + "_" +((data.getDate())) + "/" + ((data.getMonth() + 1)) + "/" + data.getFullYear();
+    const dataFormatada = ((data.getHours())) + "_" + ((data.getMinutes())) + "_" + ((data.getDate())) + "/" + ((data.getMonth() + 1)) + "/" + data.getFullYear();
     const link = document.createElement("a");
     link.download = "Foto_Editada_" + dataFormatada + ".png";
     link.href = canvas.toDataURL();
