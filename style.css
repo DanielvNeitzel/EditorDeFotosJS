@@ -157,7 +157,7 @@ footer {
 .filters-content .active,
 button:hover {
   font-weight: bold;
-  border: 2px dotted #000;
+  border: 1px dotted #000;
   background-color: #f60;
   color: #fff;
   border-style: dashed;
