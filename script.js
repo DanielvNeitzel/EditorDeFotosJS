@@ -46,6 +46,7 @@ function init() {
         'saturation-ctrl': { value: 100, max: 200 },
         'color-ctrl': { value: 0, max: 100 },
         'color-inv-ctrl': { value: 0, max: 100 },
+        'color-sepia-ctrl': { value: 0, max: 100 },
     };
 
     rotate = 0;
@@ -114,6 +115,7 @@ range.oninput = () => {
         saturate(${filters["saturation-ctrl"].value}%) 
         grayscale(${filters["color-ctrl"].value}%) 
         invert(${filters["color-inv-ctrl"].value}%)
+        sepia(${filters["color-sepia-ctrl"].value}%)
     `;
 };
 
@@ -145,6 +147,7 @@ function download() {
         saturate(${filters["saturation-ctrl"].value}%) 
         grayscale(${filters["color-ctrl"].value}%) 
         invert(${filters["color-inv-ctrl"].value}%)
+        sepia(${filters["color-sepia-ctrl"].value}%)
     `;
 
     ctx.translate(canvas.width / 2, canvas.height / 2);
